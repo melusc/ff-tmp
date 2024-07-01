@@ -18,14 +18,14 @@
 	"private": true,
 	"packageManager": "yarn@4.3.1",
 	"devDependencies": {
-		"@lusc/tsconfig": "^5.0.0",
-		"@types/node": "^20.14.7",
+		"@lusc/tsconfig": "^5.1.0",
+		"@types/node": "^20.14.9",
 		"prettier": "^3.3.2",
-		"typescript": "^5.5.2",
+		"typescript": "^5.5.3",
 		"xo": "^0.58.0"
 	},
 	"dependencies": {
-		"execa": "^9.2.0",
+		"execa": "^9.3.0",
 		"zod": "^3.23.8"
 	}
 }
