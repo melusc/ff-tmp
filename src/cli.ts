@@ -51,19 +51,18 @@ if (!noAdblock) {
 	const versionRequest = await fetch(
 		'https://addons.mozilla.org/api/v5/addons/addon/ublock-origin/versions/',
 	);
-	const versions = await z
-		.promise(
-			z.object({
-				results: z.array(
-					z.object({
-						file: z.object({
-							url: z.string(),
-						}),
+	const untrustedJson: unknown = await versionRequest.json();
+	const versions = z
+		.object({
+			results: z.array(
+				z.object({
+					file: z.object({
+						url: z.string(),
 					}),
-				),
-			}),
-		)
-		.parse(versionRequest.json());
+				}),
+			),
+		})
+		.parse(untrustedJson);
 
 	const [latest] = versions.results;
 
