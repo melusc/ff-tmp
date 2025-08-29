@@ -1,5 +1,2 @@
 $root = "$PSScriptRoot/.."
-
-Push-Location $root
-yarn start @args
-Pop-Location
+yarn --cwd "$root" start @args
