@@ -1,2 +1,2 @@
 $root = "$PSScriptRoot/.."
-yarn --cwd "$root" start @args
+node --env-file "$root/.env" "$root/dist/cli.js" @args
