@@ -52,3 +52,6 @@ user_pref('extensions.enabledScopes', 15);
 // Disable Sponsored Shortcuts in Home
 user_pref('browser.newtabpage.activity-stream.showSponsoredTopSites', false);
 user_pref('browser.newtabpage.activity-stream.showSponsoredCheckboxes', false);
+
+// Group by Profile in taskbar
+user_pref('taskbar.grouping.useprofile', true);
