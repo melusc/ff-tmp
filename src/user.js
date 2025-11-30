@@ -23,16 +23,19 @@ user_pref('toolkit.telemetry.archive.enabled', false);
 user_pref('experiments.supported', false);
 user_pref('experiments.enabled', false);
 user_pref('experiments.manifest.uri', '');
+user_pref('app.shield.optoutstudies.enabled', false);
 
 // PREF: Disable sending reports of tab crashes to Mozilla (about:tabcrashed), don't nag user about unsent crash reports
 // https://hg.mozilla.org/mozilla-central/file/tip/browser/app/profile/firefox.js
 user_pref('browser.tabs.crashReporting.sendReport', false);
 user_pref('browser.crashReports.unsubmittedCheck.enabled', false);
+user_pref('browser.crashReports.unsubmittedCheck.autoSubmit2', false);
 
 // PREF: Disable collection/sending of the health report (healthreport.sqlite*)
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 // https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref('datareporting.healthreport.uploadEnabled', false);
+user_pref('datareporting.usage.uploadEnabled', false);
 user_pref('datareporting.healthreport.service.enabled', false);
 user_pref('datareporting.policy.dataSubmissionEnabled', false);
 // "Allow Firefox to make personalized extension recommendations"
@@ -45,3 +48,7 @@ user_pref('browser.newtabpage.activity-stream.feeds.section.topstories', false);
 user_pref('xpinstall.signatures.required', false);
 user_pref('extensions.autoDisableScopes', 10);
 user_pref('extensions.enabledScopes', 15);
+
+// Disable Sponsored Shortcuts in Home
+user_pref('browser.newtabpage.activity-stream.showSponsoredTopSites', false);
+user_pref('browser.newtabpage.activity-stream.showSponsoredCheckboxes', false);
