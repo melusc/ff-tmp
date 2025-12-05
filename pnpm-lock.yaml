@@ -9,29 +9,29 @@ importers:
   .:
     dependencies:
       execa:
-        specifier: ^9.6.0
+        specifier: ^9.6.1
         version: 9.6.1
       zod:
-        specifier: ^4.0.16
+        specifier: ^4.1.13
         version: 4.1.13
     devDependencies:
       '@lusc/eslint-config':
-        specifier: ^8.0.0
+        specifier: ^8.2.0
         version: 8.2.0(@typescript-eslint/utils@8.48.1(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)
       '@lusc/tsconfig':
-        specifier: ^7.0.0
+        specifier: ^7.2.0
         version: 7.2.0
       '@types/node':
-        specifier: ^24.9.1
+        specifier: ^24.10.1
         version: 24.10.1
       eslint:
-        specifier: ^9.33.0
+        specifier: ^9.39.1
         version: 9.39.1
       prettier:
-        specifier: ^3.6.2
+        specifier: ^3.7.4
         version: 3.7.4
       typescript:
-        specifier: ^5.9.2
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
