@@ -12,12 +12,12 @@ importers:
         specifier: ^9.6.1
         version: 9.6.1
       zod:
-        specifier: ^4.3.3
-        version: 4.3.3
+        specifier: ^4.3.4
+        version: 4.3.4
     devDependencies:
       '@lusc/eslint-config':
-        specifier: ^8.3.0
-        version: 8.3.0(@typescript-eslint/utils@8.51.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)
+        specifier: ^8.4.0
+        version: 8.4.0(@typescript-eslint/utils@8.51.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)
       '@lusc/tsconfig':
         specifier: ^7.2.0
         version: 7.2.0
@@ -117,11 +117,11 @@ packages:
     resolution: {integrity: sha512-ZT55BDLV0yv0RBm2czMiZ+SqCGO7AvmOM3G/w2xhVPH+te0aKgFjmBvGlL1dH+ql2tgGO3MVrbb3jCKyvpgnxA==}
     engines: {node: 20 || >=22}
 
-  '@lusc/eslint-config@8.3.0':
-    resolution: {integrity: sha512-753V0tMrGW9vIt0SAcOhKnU6BX+hpMiQoTvXp8/lGGZo44bn06wOhUAqpRtLzmqYsI/IIY6FSXsOygM7DLX0qg==}
+  '@lusc/eslint-config@8.4.0':
+    resolution: {integrity: sha512-hHAllO+wEQ45KMK3uHUcr/qGpXzs8srEx1vO+IYK6gNlD/pRCdrPHrgl6nPKSSgZphOWK27EqRXUD+mdGA4wMg==}
     engines: {node: ^24.10.0 || ^25.0.0}
     peerDependencies:
-      eslint: ^9.39.1
+      eslint: ^9.39.2
 
   '@lusc/tsconfig@7.2.0':
     resolution: {integrity: sha512-LnafPidy3cmzznD7irQMQ6EW045neH496WwL4BCK0GCvkg17cu2HaMhUont4kZytat5j7EhPT+VwjAo0xUcUTw==}
@@ -604,6 +604,10 @@ packages:
     resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
     engines: {node: '>=18'}
 
+  globals@17.0.0:
+    resolution: {integrity: sha512-gv5BeD2EssA793rlFWVPMMCqefTlpusw6/2TbAVMy0FzcG8wKJn4O+NqJ4+XWmmwrayJgw5TzrmWjFgmz1XPqw==}
+    engines: {node: '>=18'}
+
   globrex@0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
@@ -934,8 +938,8 @@ packages:
     resolution: {integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==}
     engines: {node: '>=18'}
 
-  zod@4.3.3:
-    resolution: {integrity: sha512-bQ7Rxwfn04DCrTjjRfD9SavY2vWdmf3REjs/mkc1LdwI1KkcHClBRJmnvmA/6epGeqlHePtIRF1J4SrMMlW7IA==}
+  zod@4.3.4:
+    resolution: {integrity: sha512-Zw/uYiiyF6pUT1qmKbZziChgNPRu+ZRneAsMUDU6IwmXdWt5JwcUfy2bvLOCUtz5UniaN/Zx5aFttZYbYc7O/A==}
 
 snapshots:
 
@@ -1026,7 +1030,7 @@ snapshots:
     dependencies:
       '@isaacs/balanced-match': 4.0.1
 
-  '@lusc/eslint-config@8.3.0(@typescript-eslint/utils@8.51.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)':
+  '@lusc/eslint-config@8.4.0(@typescript-eslint/utils@8.51.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.39.2)
       '@eslint/js': 9.39.2
@@ -1039,7 +1043,7 @@ snapshots:
       eslint-plugin-regexp: 2.10.0(eslint@9.39.2)
       eslint-plugin-security: 3.0.1
       eslint-plugin-unicorn: 62.0.0(eslint@9.39.2)
-      globals: 16.5.0
+      globals: 17.0.0
       typescript: 5.9.3
       typescript-eslint: 8.51.0(eslint@9.39.2)(typescript@5.9.3)
     transitivePeerDependencies:
@@ -1562,6 +1566,8 @@ snapshots:
 
   globals@16.5.0: {}
 
+  globals@17.0.0: {}
+
   globrex@0.1.2: {}
 
   graceful-fs@4.2.11: {}
@@ -1839,4 +1845,4 @@ snapshots:
 
   yoctocolors@2.1.2: {}
 
-  zod@4.3.3: {}
+  zod@4.3.4: {}
