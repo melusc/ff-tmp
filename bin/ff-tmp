@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+basedir=$(dirname "$(realpath "$0" | sed -e 's,\\,/,g')")
+
+node --env-file "$basedir/../.env" "$basedir/../dist/cli.js" "$@"
