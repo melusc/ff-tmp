@@ -13,7 +13,7 @@ import Logger from './log.js';
 import {run} from './run.js';
 
 const {
-	values: {'no-adblock': noAdblock, detached},
+	values: {'no-adblock': noAdblock, detached, help: showHelp},
 } = parseArgs({
 	options: {
 		'no-adblock': {
@@ -23,9 +23,33 @@ const {
 		detached: {
 			type: 'boolean',
 			default: false,
+			short: 'd',
+		},
+		help: {
+			type: 'boolean',
+			default: false,
+			short: 'h',
 		},
 	},
 });
+
+if (showHelp) {
+	console.log(`ff-tmp: Create a temporary Firefox profile.
+
+Usage: ff-tmp [OPTIONS]
+
+Options:
+  -h, --help
+          Print help
+
+      --no-adblock
+          Don't install uBlock Origin.
+
+  -d, --detached
+          Detach Firefox process, run in background. This way,
+          closing the terminal will not terminate Firefox.`);
+	exit(0);
+}
 
 const {FIREFOX_PATH: firefoxPath} = z
 	.object({
