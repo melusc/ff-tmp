@@ -7,20 +7,13 @@ import type Logger from './log.js';
 export async function run(
 	firefoxPath: string,
 	temporaryDirectory: string,
-	xpi: string | undefined,
 	logger: Logger,
 ) {
 	logger.log('Starting Firefox');
 
 	await execa(
 		firefoxPath,
-		[
-			'-profile',
-			temporaryDirectory,
-			'-no-remote',
-			'-new-instance',
-			...(xpi ? [xpi] : []),
-		],
+		['-profile', temporaryDirectory, '-no-remote', '-new-instance'],
 		{
 			detached: true,
 		},

@@ -45,9 +45,7 @@ user_pref('browser.discovery.enabled', false);
 user_pref('browser.newtabpage.activity-stream.feeds.section.topstories', false);
 
 // Enable extension installation without user interaction
-user_pref('xpinstall.signatures.required', false);
-user_pref('extensions.autoDisableScopes', 10);
-user_pref('extensions.enabledScopes', 15);
+user_pref('extensions.autoDisableScopes', 0);
 
 // Disable Sponsored Shortcuts in Home
 user_pref('browser.newtabpage.activity-stream.showSponsoredTopSites', false);

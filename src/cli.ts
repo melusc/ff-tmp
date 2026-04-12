@@ -1,5 +1,4 @@
-import {Buffer} from 'node:buffer';
-import {cp, mkdtemp, realpath, writeFile} from 'node:fs/promises';
+import {cp, mkdtemp, realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {env, exit} from 'node:process';
@@ -11,6 +10,7 @@ import {z} from 'zod';
 
 import Logger from './log.js';
 import {run} from './run.js';
+import {setupUblock} from './setup/ublock.js';
 
 const {
 	values: {'no-adblock': noAdblock, detached, help: showHelp},
@@ -68,36 +68,8 @@ await cp(
 	path.join(temporaryProfileDirectory, 'user.js'),
 );
 
-let xpiOutDirectory: string | undefined;
-
 if (!noAdblock) {
-	const versionRequest = await fetch(
-		'https://addons.mozilla.org/api/v5/addons/addon/ublock-origin/versions/',
-	);
-	const untrustedJson: unknown = await versionRequest.json();
-	const versions = z
-		.object({
-			results: z.array(
-				z.object({
-					file: z.object({
-						url: z.string(),
-					}),
-				}),
-			),
-		})
-		.parse(untrustedJson);
-
-	const [latest] = versions.results;
-
-	if (!latest) {
-		throw new Error('Could not find latest version');
-	}
-
-	const xpiRequest = await fetch(latest.file.url);
-	const xpi = await xpiRequest.arrayBuffer();
-
-	xpiOutDirectory = path.join(temporaryProfileDirectory, 'ublock.temp.xpi');
-	await writeFile(xpiOutDirectory, Buffer.from(xpi));
+	await setupUblock(temporaryProfileDirectory);
 }
 
 if (detached) {
@@ -110,10 +82,6 @@ if (detached) {
 		firefoxPath,
 	];
 
-	if (xpiOutDirectory) {
-		arguments_.push('--xpi', xpiOutDirectory);
-	}
-
 	execaNode(fileURLToPath(detachedPath), arguments_, {
 		detached: true,
 	}).unref();
@@ -123,6 +91,5 @@ if (detached) {
 	const logger = new Logger(false);
 	logger.log('firefoxPath="%s"', firefoxPath);
 	logger.log('tmpProfileDir="%s"', temporaryProfileDirectory);
-	logger.log('xpiOutDir="%s"', xpiOutDirectory);
-	await run(firefoxPath, temporaryProfileDirectory, xpiOutDirectory, logger);
+	await run(firefoxPath, temporaryProfileDirectory, logger);
 }

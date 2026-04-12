@@ -7,7 +7,7 @@ import {run} from './run.js';
 const logger = new Logger(true);
 
 const {
-	values: {'tmp-dir': temporaryDirectory, 'firefox-path': firefoxPath, xpi},
+	values: {'tmp-dir': temporaryDirectory, 'firefox-path': firefoxPath},
 } = parseArgs({
 	options: {
 		'tmp-dir': {
@@ -16,17 +16,13 @@ const {
 		'firefox-path': {
 			type: 'string',
 		},
-		xpi: {
-			type: 'string',
-		},
 	},
 });
 
 logger.log('--tmp-dir="%s"', temporaryDirectory);
-logger.log('--xpi="%s"', xpi);
 logger.log('--firefox-path="%s"', firefoxPath);
 
 assert.ok(temporaryDirectory);
 assert.ok(firefoxPath);
 
-await run(firefoxPath, temporaryDirectory, xpi, logger);
+await run(firefoxPath, temporaryDirectory, logger);
