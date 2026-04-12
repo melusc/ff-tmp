@@ -53,3 +53,6 @@ user_pref('browser.newtabpage.activity-stream.showSponsoredCheckboxes', false);
 
 // Group by Profile in taskbar
 user_pref('taskbar.grouping.useprofile', true);
+
+// Disable Welcome Flow
+user_pref('browser.startup.homepage_override.mstone', 'ignore');
