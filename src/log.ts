@@ -3,6 +3,7 @@ import {mkdir} from 'node:fs/promises';
 import {formatWithOptions} from 'node:util';
 
 const logsDirectory = new URL('../logs/', import.meta.url);
+// eslint-disable-next-line unicorn/no-top-level-side-effects
 await mkdir(logsDirectory, {recursive: true});
 
 /*
