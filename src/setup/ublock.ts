@@ -4,6 +4,8 @@ import path from 'node:path';
 
 import z from 'zod';
 
+/* eslint-disable unicorn/max-nested-calls */
+
 export async function setupUblock(
 	temporaryProfileDirectory: string,
 ): Promise<void> {
@@ -45,3 +47,5 @@ export async function setupUblock(
 
 	await writeFile(extensionTarget, Buffer.from(xpi));
 }
+
+/* eslint-enable unicorn/max-nested-calls */
