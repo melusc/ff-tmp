@@ -84,7 +84,7 @@ if (detached) {
 
 	execaNode(fileURLToPath(detachedPath), arguments_, {
 		detached: true,
-	}).unref();
+	}).nodeChildProcess.unref();
 
 	exit(0);
 } else {
