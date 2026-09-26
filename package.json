@@ -18,7 +18,7 @@
 	"private": true,
 	"packageManager": "pnpm@12.3.1",
 	"devDependencies": {
-		"@lusc/eslint-config": "^18.2.0",
+		"@lusc/eslint-config": "^20.0.0",
 		"@lusc/tsconfig": "^7.2.1",
 		"@types/node": "^24.13.3",
 		"eslint": "^10.9.1",
