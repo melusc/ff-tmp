@@ -177,8 +177,8 @@ importers:
         specifier: ^21.0.0
         version: 21.0.0(@typescript-eslint/utils@8.71.1(eslint@10.12.0)(typescript@6.0.3))(eslint@10.12.0)
       '@lusc/tsconfig':
-        specifier: ^7.2.1
-        version: 7.2.1
+        specifier: ^8.0.0
+        version: 8.0.0
       '@types/node':
         specifier: ^26.6.5
         version: 26.6.5
@@ -289,9 +289,9 @@ packages:
     peerDependencies:
       eslint: ^10.11.0
 
-  '@lusc/tsconfig@7.2.1':
-    resolution: {integrity: sha512-BckyzQRTbjPoeL9wRTc8hnHwCl4u8F0Z27dhcm7LtktB3DuPhUX3XIgr3syfXxDl3mT6/y6YpjesG4MIG86rAA==}
-    engines: {node: ^20.19.1 || ^22.15.0 || ^24.6.0 || ^25.0.0}
+  '@lusc/tsconfig@8.0.0':
+    resolution: {integrity: sha512-GNM7qgzUbH9ZfWFzr5vQNOMCSjMqgu69xM62iPpWrQECqfLQ/qHutZHDufbHexiK4GQUr/HAkCChMZR8ng8EmQ==}
+    engines: {node: ^24.22.1 || ^26.12.1}
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -1211,7 +1211,7 @@ snapshots:
       - supports-color
       - ts-declaration-location
 
-  '@lusc/tsconfig@7.2.1': {}
+  '@lusc/tsconfig@8.0.0': {}
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
