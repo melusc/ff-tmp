@@ -1,6 +1,6 @@
 import {rm} from 'node:fs/promises';
 
-import {execa} from 'execa';
+import spawn from 'nano-spawn';
 
 import type Logger from './log.js';
 
@@ -11,7 +11,7 @@ export async function run(
 ) {
 	logger.log('Starting Firefox');
 
-	await execa(
+	await spawn(
 		firefoxPath,
 		['-profile', temporaryDirectory, '-no-remote', '-new-instance'],
 		{

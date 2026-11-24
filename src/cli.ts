@@ -5,7 +5,7 @@ import {env, exit} from 'node:process';
 import {fileURLToPath} from 'node:url';
 import {parseArgs} from 'node:util';
 
-import {execaNode} from 'execa';
+import spawn from 'nano-spawn';
 import {z} from 'zod';
 
 import Logger from './log.js';
@@ -76,15 +76,17 @@ if (detached) {
 	const detachedPath = new URL('detached.js', import.meta.url);
 
 	const arguments_ = [
+		fileURLToPath(detachedPath),
 		'--tmp-dir',
 		temporaryProfileDirectory,
 		'--firefox-path',
 		firefoxPath,
 	];
 
-	execaNode(fileURLToPath(detachedPath), arguments_, {
+	const process = await spawn('node', arguments_, {
 		detached: true,
-	}).nodeChildProcess.unref();
+	}).nodeChildProcess;
+	process.unref();
 
 	exit(0);
 } else {
